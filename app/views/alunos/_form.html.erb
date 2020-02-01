@@ -1,29 +1,44 @@
 <%= form_with(model: aluno,local: true) do |form|%>
+<p>
     <div class="field">
         <%= form.label :nome%>
         <%= form.text_field :nome%>
     </div>
+ </p>   
+ <p>
     <div class="field">
         <%= form.label :classe%>
         <%= form.text_field :classe%>
     </div>
+ </p>
+ <p>   
     <div class="field">
         <%= form.label :endereco%>
         <%= form.text_field :endereco%>
     </div>
+ </p>
+ <p>   
     <div class="field">
         <%=form.label :data_nasc%>
-        <%=form.text_field:data_nasc%>
+        <%#=form.text_field:data_nasc%>
+        <input id=:data_nasc name=data_nasc type="date" />
     </div>
+ </p>
+ <p>   
     <div class="field">
         <%=form.label :b1%>
         <%=form.text_field :b1%>
     </div>
+   </p>
+    <p>
     <div class="field">
         <%=form.label :b2%>
         <%=form.text_field :b2%>
     </div>
+  </p>
+  <p>  
     <div class="actions">
         <%= form.submit%>
     </div>
+    </p>
 <%end%>
