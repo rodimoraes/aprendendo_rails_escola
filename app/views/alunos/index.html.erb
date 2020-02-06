@@ -1,8 +1,24 @@
-<h1>Sistema Escola</h1>
 <p id="notice"><%=notice%></p>
-
-<h2>Alunos</h2>
-<table>
+<div>
+    <section class= "hero is-light is-small is-bold">
+        <div class = "hero-head">
+            <div class = "navbar-brand">
+                <a class = "navbar-item">
+                <center>
+                <%= link_to 'Home', dashboard_index_path %>
+                </center>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="hero-body">
+    <h1 class = title> Alunos
+    </h1>
+</div>
+<button class="button is-light"><%= link_to 'Novo', new_aluno_path %></button>
+<div class ="hero-body">
+    <div class="container has-text-centered">
+    <table class= "table is-striped is-fullwidth">
     <thead>
     <tr>
         <th>id</th>
@@ -12,20 +28,31 @@
         <th>Status</th>
     </tr>
     </thead>
-<%= link_to 'Novo', new_aluno_path %>
-<tbody>
-    <% @alunos.each do |aluno|%>
-    <tr>
-        <td><%= aluno.id%></td>
-        <td><%= aluno.nome%></td>
-        <td><%= aluno.classe%></td>
-        <td><%= aluno.data_nasc%></td>
-        <td><%= aluno.status%></td>
-        <td><%= link_to 'Mostrar', aluno %></td>
-        <td><%= link_to 'Editar', edit_aluno_path(aluno)%></td>
-        <td><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></td>
-    </tr>
-    <%end%>
-</tbody>
-</table>
+    
+
+            <tbody>
+            <% @alunos.each do |aluno|%>
+            <tr>
+            <td><%= aluno.id%></td>
+            <td><%= aluno.nome%></td>
+            <td><%= aluno.classe%></td>
+            <td><%= aluno.data_nasc%></td>
+                <% if aluno.status == 'APROVADO'%>
+                <td><font color="green"><b><%= aluno.status%></b></font></td>
+                <%else%>
+                <td><font color="red"><b><%= aluno.status%></b></font></td>
+                <%end%>
+            <td><button class="button is-outlined"><%= link_to 'Mostrar', aluno %></button></td>
+            <td><button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(aluno)%></button></td>
+            <td><button class="button is-danger is-outlined"><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
+            </tr>
+            <%end%>
+        </tbody>
+        </table>
+
+
+</div>
+</div>
+
 <br>
+<%#= link_to 'Home', dashboard_index_path %>

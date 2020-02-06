@@ -4,12 +4,22 @@
     <title>Escola</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
+
     <%= yield %>
+    <footer class="footer">
+      <div class = "content has-text-centered">
+        <p><small> Cats_Code LTDA - Todos os direitos reservados</small></p>
+      </div>
+    </footer>
   </body>
 </html>
