@@ -1,0 +1,51 @@
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Novo Aluno:</h1>
+      <h2 class="subtitle">
+        <%= form_with(model: aluno,local: true) do |form|%>
+        <div class="field">
+        <%=form.label :nome%>
+        <%=form.%>
+        </div>
+        <div class="field">
+        <label class="label">Classe:</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="" name="aluno[classe]">
+        </div>
+        </div>
+                <div class="field">
+        <label class="label">Endereço:</label>
+        <div class="control">
+            <input class="input" type="text" placeholder=""name="aluno[endereco]">
+        </div>
+        </div>
+        </div>
+        <div class="field">
+            <%=form.label :data_nasc%>
+            <%=form.date_select :data_nasc, start_year: 1970%>
+        </div>
+
+
+
+         <label class="label">Notas:</label>
+        </div>
+        <div class="field">
+        <label class="label">B1:</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="0.0"name="aluno[b1]">
+        </div>
+        </div>
+                  <div class="field">
+        <label class="label">B2:</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="0.0"name="aluno[b2]">
+        </div>
+        </div>
+        <div class = "actions">
+        <input class="button" type="submit" name="commit" value="Criar Aluno" data-disable-with="Create Aluno" />
+        <%end%>
+      </h2>
+    </div>
+    </div>
+  </section>

@@ -1,0 +1,53 @@
+<h1>Aluno: </h1>
+
+<p id="notice"><%=notice%></p>
+    <strong>Id:</strong>
+    <%= @aluno.id %>
+</p>
+<%if @aluno.media < 7%>
+    <p>Aluno foi reprovado pois tem média menor que 7.</p>
+<%end%>
+
+<p>
+<strong>Nome:</strong>
+<%=@aluno.nome%>
+</p>
+
+<p>
+<strong>Classe:</strong>
+<%=@aluno.classe%>
+</p>
+
+<p>
+<strong>Endereço:</strong>
+<%=@aluno.endereco%>
+</p>
+
+<p>
+<strong>Data de Nascimento:</strong>
+<%=@aluno.data_nasc%>
+</p>
+
+<p>
+<strong>B1:</strong>
+<%=@aluno.b1%>
+</p>
+
+<p>
+<strong>B2:</strong>
+<%=@aluno.b2%>
+</p>
+
+<p>
+<strong>Media:</strong>
+<%=@aluno.media%>
+</p>
+
+<p>
+<strong>Status:</strong>
+<%=@aluno.status%>
+</p>
+
+<%= link_to 'Voltar', alunos_path %>
+<%= link_to 'Editar', edit_aluno_path(@aluno)%>
+

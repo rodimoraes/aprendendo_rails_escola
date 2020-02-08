@@ -1,21 +1,31 @@
-<p id="notice"><%=notice%></p>
+
 <div>
     <section class= "hero is-light is-small is-bold">
         <div class = "hero-head">
             <div class = "navbar-brand">
                 <a class = "navbar-item">
                 <center>
-                <%= link_to 'Home', dashboard_index_path %>
+                <%= link_to 'Início', dashboard_index_path %>
                 </center>
                 </a>
             </div>
         </div>
     </section>
+<% if notice%>
+<div class="hero">
+    <div class="notification">
+      <p id="notice"><%=notice%></p>
+    </div>
+  </div>
+<%end%>
+
     <div class="hero-body">
     <h1 class = title> Alunos
     </h1>
 </div>
-<button class="button is-light"><%= link_to 'Novo', new_aluno_path %></button>
+
+    <button class="button is-outlined"><%= link_to 'Novo', new_aluno_path %></button>
+
 <div class ="hero-body">
     <div class="container has-text-centered">
     <table class= "table is-striped is-fullwidth">
@@ -44,7 +54,8 @@
                 <%end%>
             <td><button class="button is-outlined"><%= link_to 'Mostrar', aluno %></button></td>
             <td><button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(aluno)%></button></td>
-            <td><button class="button is-danger is-outlined"><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
+            <td><button class="button is-outlined"><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
+  
             </tr>
             <%end%>
         </tbody>

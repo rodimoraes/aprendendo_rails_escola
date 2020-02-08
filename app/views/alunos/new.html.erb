@@ -1,5 +1,10 @@
-<h1>Novo Aluno: </h1>
-
+<div class="hero">
+    <div class="notification">
+      <h1 class="title">
+        Novo Aluno:
+      </h1> 
+    </div>
+  </div>
 <%= render 'form', aluno: @aluno %>
 
-<%= link_to 'Voltar', alunos_path %>
+<button class="button is-outlined"><%= link_to 'Voltar', alunos_path %></button>

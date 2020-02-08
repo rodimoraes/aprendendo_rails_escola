@@ -1,6 +1,12 @@
-<h1>Editar:</h1>
+<div class="hero">
+    <div class="notification">
+      <h1 class="title">
+        Editar:
+      </h1> 
+    </div>
+  </div>
 
 <%= render 'form', aluno: @aluno %>
 
-<%= link_to 'Mostrar', @aluno %>
-<%= link_to 'Voltar',  alunos_path%>
+<button class="button is-outlined"><%= link_to 'Mostrar', @aluno %></button>
+<button class="button is-outlined"><%= link_to 'Voltar',  alunos_path%></button>
