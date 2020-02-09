@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_172215) do
+ActiveRecord::Schema.define(version: 2020_02_09_205924) do
 
   create_table "alunos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "nome"
-    t.string "classe"
     t.string "endereco"
     t.date "data_nasc"
     t.float "b1"

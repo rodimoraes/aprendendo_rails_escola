@@ -30,7 +30,6 @@ class AlunosController < ApplicationController
 
     def new
         @aluno = Aluno.new
-       
     end
     
     def update
@@ -74,6 +73,7 @@ class AlunosController < ApplicationController
         end
     end
 end
+
     
     private 
     def set_aluno
