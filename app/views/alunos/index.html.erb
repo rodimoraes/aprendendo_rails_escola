@@ -31,7 +31,7 @@
             <tr>
             <td><%= aluno.id%></td>
             <td><%= aluno.nome%></td>
-            <td><%= aluno.classe%></td>
+            <td><%= classe_identifica(aluno.classe_id)%></td>
             <td><%= format_data(aluno.data_nasc)%></td>
                 <% if aluno.status == 'APROVADO'%>
                 <td><font color="green"><b><%= aluno.status%></b></font></td>

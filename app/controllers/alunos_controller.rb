@@ -1,7 +1,7 @@
 class AlunosController < ApplicationController
     before_action :set_aluno, only: [:show, :edit, :update, :destroy]
     #metodos internos
-    @classes = Classe.all
+   
 
     def calc_media(b1,b2)
         media = (b1 + b2) /2
@@ -25,6 +25,7 @@ class AlunosController < ApplicationController
     end
 
     def show
+        @classes = Classe.all
     end
 
     def new
