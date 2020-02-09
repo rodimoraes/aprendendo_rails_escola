@@ -1,6 +1,8 @@
 class AlunosController < ApplicationController
     before_action :set_aluno, only: [:show, :edit, :update, :destroy]
     #metodos internos
+    @classes = Classe.all
+
     def calc_media(b1,b2)
         media = (b1 + b2) /2
         return media
@@ -27,6 +29,7 @@ class AlunosController < ApplicationController
 
     def new
         @aluno = Aluno.new
+       
     end
     
     def update
@@ -77,7 +80,7 @@ end
     end
 
     def aluno_params
-        params.require(:aluno).permit(:nome,:classe,:endereco,:data_nasc,:b1,:b2)
+        params.require(:aluno).permit(:nome,:classe_id,:endereco,:data_nasc,:b1,:b2)
     end
     
 end

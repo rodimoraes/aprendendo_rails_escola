@@ -9,12 +9,10 @@
         </div>
     </p>   
     <p>
-    
-
-        <div class="field">
-            <%= form.label :classe%>
-            <%= form.text_field :classe%>   
-        </div>
+    <div class="field">
+        <%= form.label :classe%>
+        <%= form.collection_select :classe_id, Classe.all, :id, :nome %>
+    </div>
     </p>
     <p>   
         <div class="field">
@@ -43,7 +41,7 @@
     <p>  
         <div class="actions">
             <div class="actions">
-           <input class="button" type="submit" name="commit" value="Criar Aluno" data-disable-with="Create Aluno" /></button>
+           <input class="button" type="submit" name="commit" value="Salvar" data-disable-with="Salvando..." /></button>
          </div>
         </div>
         </p>

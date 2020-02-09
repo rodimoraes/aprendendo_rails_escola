@@ -36,7 +36,8 @@
 
 <p>
 <strong>Classe:</strong>
-<%=@aluno.classe%>
+<%id_classe = @aluno.classe_id%>
+<%=@classes.find(classe_id)  %>
 </p>
 
 <p>
