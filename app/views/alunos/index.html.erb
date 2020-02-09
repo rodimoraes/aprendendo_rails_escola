@@ -1,16 +1,4 @@
-
 <div>
-    <section class= "hero is-light is-small is-bold">
-        <div class = "hero-head">
-            <div class = "navbar-brand">
-                <a class = "navbar-item">
-                <center>
-                <%= link_to 'Início', dashboard_index_path %>
-                </center>
-                </a>
-            </div>
-        </div>
-    </section>
 <% if notice%>
 <div class="hero">
     <div class="notification">
@@ -38,15 +26,13 @@
         <th>Status</th>
     </tr>
     </thead>
-    
-
             <tbody>
             <% @alunos.each do |aluno|%>
             <tr>
             <td><%= aluno.id%></td>
             <td><%= aluno.nome%></td>
             <td><%= aluno.classe%></td>
-            <td><%= aluno.data_nasc%></td>
+            <td><%= format_data(aluno.data_nasc)%></td>
                 <% if aluno.status == 'APROVADO'%>
                 <td><font color="green"><b><%= aluno.status%></b></font></td>
                 <%else%>
@@ -60,8 +46,6 @@
             <%end%>
         </tbody>
         </table>
-
-
 </div>
 </div>
 

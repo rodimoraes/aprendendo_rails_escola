@@ -1,0 +1,21 @@
+
+  <div class="hero-body">
+  <div class = "notification">
+    <%= form_with(model: classe,local: true) do |form|%>
+    <p>
+         <div class="field">
+            <%= form.label :nome%>
+            <%= form.text_field :nome%>   
+        </div>
+    </p>   
+    <p>  
+        <div class="actions">
+            <div class="actions">
+           <input class="button" type="submit" name="commit" value="Salvar" data-disable-with="Create Classe" /></button>
+         </div>
+        </div>
+        </p>
+    <%end%>
+    </div>
+</div>
+</div>

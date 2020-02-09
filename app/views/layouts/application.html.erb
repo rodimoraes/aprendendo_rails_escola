@@ -14,7 +14,32 @@
   </head>
 
 <body style="background-color:#f5f5f5;">
-
+   <div class = "hero-head">
+        <div class = "navbar">
+            <div class = "container">
+                <div class= "navbar-brand">
+                    <a class = "navbar-item">
+                    <center>
+                        <%= link_to 'Sistema Escola', dashboard_index_path %>
+                        </center>
+                    </a>
+                </div>
+                <div class= "navbar-brand">
+                    <div class="navbar-end">
+                        <a class = "navbar-item">
+                        <center>
+                            <%= link_to 'Alunos', alunos_path %>
+                        </center>
+                        </a>
+                        <a class = "navbar-item">
+                        <center>
+                            <%= link_to 'Classes', classes_path %>
+                        </center>
+                        </a>
+                    </div>
+                </div>
+                </div>
+        </div>
     <%= yield %>
     <footer class="footer">
       <div class = "content has-text-centered">

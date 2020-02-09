@@ -1,0 +1,32 @@
+<div class="hero">
+    <div class="notification">
+      <h1 class="title">
+        Classe:
+      </h1> 
+    </div>
+  </div>
+
+    <% if notice%>
+        <div class="hero">
+            <div class="notification">
+            <p id="notice"><%=notice%></p>
+            </div>
+        </div>
+    <%end%>
+  <div class="hero-body is-bold">
+  <div class = "notification">
+    <p>
+    <strong>Id:</strong>
+    <%= @classe.id %>
+    </p>
+
+    <p>
+    <strong>Nome:</strong>
+        <%=@classe.nome%>
+    </p>
+
+    </div>
+</div>
+<button class="button is-outlined"><%= link_to 'Voltar', classes_path %></button>
+<button class="button is-outlined"><%= link_to 'Editar', edit_class_path(@classe)%></button>
+
