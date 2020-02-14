@@ -26,6 +26,13 @@
             <%=form.date_select :data_nasc, start_year: 1970%>
         </div>
     </p>
+    <p>
+    <div class="field">
+        <%= form.label :sexo%>
+        <%=select(:aluno, :sexo ,([['Masculino','M'],['Feminino','F']]))%>
+    </div>
+    </p>
+
     <p>   
         <div class="field">
             <%=form.label :b1%>

@@ -1,0 +1,12 @@
+<div class="hero">
+    <div class="notification">
+      <h1 class="title">
+        Editar Classe:
+      </h1> 
+    </div>
+  </div>
+
+<%= render 'form', classe: @classe %>
+
+<button class="button is-outlined"><%= link_to 'Mostrar', @classe %></button>
+<button class="button is-outlined"><%= link_to 'Voltar',  class_path%></button>
