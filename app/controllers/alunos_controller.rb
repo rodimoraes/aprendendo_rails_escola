@@ -81,7 +81,7 @@ end
     end
 
     def aluno_params
-        params.require(:aluno).permit(:nome,:classe_id,:sexo,:endereco,:data_nasc,:b1,:b2,:foto)
+        params.require(:aluno).permit(:nome,:classe_id,:sexo,:endereco,:data_nasc,:b1,:b2,:foto,:telefone)
     end
     
 end

@@ -8,24 +8,24 @@
 
 <% if notice%>
 <div class="hero">
-    <div class="notification">
-      <p id="notice"><%=notice%></p>
-    </div>
-  </div>
+      <script>
+      alert(<%=notice%>) 
+      </script>
 <%end%>
 
 <%if @aluno.media < 7%>
-    <div class="hero">
-    <div class="notification">
-      <p> Aluno Reprovado pois tem média menor que 7. </p>
-    </div>
-  </div>
+    <script>
+      alert(" Aluno Reprovado pois tem média menor que 7.");
+    </script>
 <%end%>
 
   <div class="hero-body is-bold">
   <div class = "notification">
 <p>
-  <%= image_tag @aluno.foto.url(:medium) %>
+<figure class="image is-128x128">
+  <img class="is-rounded" src= <%= @aluno.foto.url(:medium) %> </img>
+</figure>
+  
 </p>
 <p>
     <strong>Id:</strong>
@@ -38,8 +38,22 @@
 </p>
 
 <p>
-<strong>Classe:</strong>
-<%=classe_identifica(@aluno.classe_id)%>
+<strong>Data de Nascimento:</strong>
+<%=format_data(@aluno.data_nasc)%>
+</p>
+
+<p>
+<strong>Sexo:</strong>
+  <%=@aluno.sexo%>
+</p>
+
+<p>
+<strong>Telefone:</strong>
+  <%if @aluno.telefone != nil%>
+    <%=format_telefone(@aluno.telefone.to_s)%>
+  <%else%>
+    <i>Telefone não cadastrado </i>
+  <%end%>
 </p>
 
 <p>
@@ -47,15 +61,12 @@
 <%=@aluno.endereco%>
 </p>
 
-<p>
-<strong>Data de Nascimento:</strong>
-<%=format_data(@aluno.data_nasc)%>
-</p>
-<p>
-<strong>Sexo:</strong>
-  <%=@aluno.sexo%>
-</p>
 
+
+<p>
+<strong>Classe:</strong>
+<%=classe_identifica(@aluno.classe_id)%>
+</p>
 
 <p>
 <strong>B1:</strong>

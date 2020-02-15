@@ -12,18 +12,6 @@
             <%= form.label :nome%>
             <%= form.text_field :nome%>   
         </div>
-    </p>   
-    <p>
-    <div class="field">
-        <%= form.label :classe%>
-        <%= form.collection_select :classe_id, Classe.all, :id, :nome %>
-    </div>
-    </p>
-    <p>   
-        <div class="field">
-            <%= form.label :endereco%>
-            <%= form.text_field :endereco%>
-        </div>
     </p>
     <p>   
         <div class="field">
@@ -35,6 +23,27 @@
     <div class="field">
         <%= form.label :sexo%>
         <%=select(:aluno, :sexo ,([['Masculino','M'],['Feminino','F']]))%>
+    </div>
+    </p>
+   <p>   
+        <div class="field">
+            <%= form.label :telefone%>
+            <%= form.text_field :telefone%>
+            <small><i>*Digite apenas números ex: 12912341234</i></small>
+        </div>
+    </p>
+    <p>   
+        <div class="field">
+            <%= form.label :endereco%>
+            <%= form.text_field :endereco%>
+        </div>
+    </p>
+    
+
+    <p>
+    <div class="field">
+        <%= form.label :classe%>
+        <%= form.collection_select :classe_id, Classe.all, :id, :nome %>
     </div>
     </p>
 
