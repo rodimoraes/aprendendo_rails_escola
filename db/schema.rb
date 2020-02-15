@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_215418) do
+ActiveRecord::Schema.define(version: 2020_02_15_003747) do
 
   create_table "alunos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "nome"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2020_02_14_215418) do
     t.string "status"
     t.integer "classe_id"
     t.string "sexo"
+    t.string "foto_file_name"
+    t.string "foto_content_type"
+    t.integer "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
   create_table "classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

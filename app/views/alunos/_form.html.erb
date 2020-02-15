@@ -1,7 +1,12 @@
 
   <div class="hero-body">
   <div class = "notification">
-    <%= form_with(model: aluno,local: true) do |form|%>
+    <%= form_with(model: aluno,local: true,  html: { multipart: true }) do |form|%>
+    <p>
+        <%= form.label :foto %>
+        <%= form.file_field :foto %>
+    </p>
+    <br>
     <p>
          <div class="field">
             <%= form.label :nome%>
