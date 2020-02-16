@@ -1,94 +1,102 @@
 <div class="hero">
-    <div class="notification">
+    <div class="container is-widescreen">
       <h1 class="title">
-        Aluno:
+        Dados do Aluno:
       </h1> 
     </div>
   </div>
+<div class="columns is-desktop">
+  <div class="column">
+        <div class="box">
+        <strong>Dados Pessoais:</strong>
+        <br>
+        <article class="media">
+        <div class="media-left">
+        <figure class="image is-64x64">
+        <img class="is-rounded" src= <%= @aluno.foto.url(:medium) %> </img>
+        </figure>
 
-<% if notice%>
-<div class="hero">
-      <script>
-      alert(<%=notice%>) 
-      </script>
-<%end%>
+        </div>
+        <div class="media-content">
+        <div class="content">
+        <p>
+        <strong>Id:</strong>
+        <%= @aluno.id %>
+        </p>
 
-<%if @aluno.media < 7%>
-    <script>
-      alert(" Aluno Reprovado pois tem média menor que 7.");
-    </script>
-<%end%>
+        <p>
+        <strong>Nome:</strong>
+        <%=@aluno.nome%>
+        </p>
 
-  <div class="hero-body is-bold">
-  <div class = "notification">
-<p>
-<figure class="image is-128x128">
-  <img class="is-rounded" src= <%= @aluno.foto.url(:medium) %> </img>
-</figure>
-  
-</p>
-<p>
-    <strong>Id:</strong>
-    <%= @aluno.id %>
-</p>
+        <p>
+        <strong>Data de Nascimento:</strong>
+        <%=format_data(@aluno.data_nasc)%>
+        </p>
 
-<p>
-<strong>Nome:</strong>
-<%=@aluno.nome%>
-</p>
+        <p>
+        <strong>Sexo:</strong>
+        <%=@aluno.sexo%>
+        </p>
 
-<p>
-<strong>Data de Nascimento:</strong>
-<%=format_data(@aluno.data_nasc)%>
-</p>
+        <p>
+        <strong>Telefone:</strong>
+        <%if @aluno.telefone != nil%>
+        <%=format_telefone(@aluno.telefone.to_s)%>
+        <%else%>
+        <i>Telefone não cadastrado </i>
+        <%end%>
+        </p>
 
-<p>
-<strong>Sexo:</strong>
-  <%=@aluno.sexo%>
-</p>
+        <p>
+        <strong>Endereço:</strong>
+        <%=@aluno.endereco%>
+        </p>
+        </p>
+        </div>
+        </div>
+        </article>
+        </div>
+        </div>
 
-<p>
-<strong>Telefone:</strong>
-  <%if @aluno.telefone != nil%>
-    <%=format_telefone(@aluno.telefone.to_s)%>
-  <%else%>
-    <i>Telefone não cadastrado </i>
-  <%end%>
-</p>
+        <div class="column">
+        <div class="box">
+         <strong>Dados Escolares:</strong>
+        <p>
+        <strong>Classe:</strong>
+        <%=classe_identifica(@aluno.classe_id)%>
+        </p>
 
-<p>
-<strong>Endereço:</strong>
-<%=@aluno.endereco%>
-</p>
+        <p>
+        <strong>B1:</strong>
+        <%=@aluno.b1%>
+        </p>
+
+        <p>
+        <strong>B2:</strong>
+        <%=@aluno.b2%>
+        </p>
+
+        <p>
+        <strong>Media:</strong>
+        <%=@aluno.media%>
+        </p>
+
+        <p>
+        <strong>Status:</strong>
+        <%=@aluno.status%>
+        </p>
+        </div>
+        </div>
 
 
 
-<p>
-<strong>Classe:</strong>
-<%=classe_identifica(@aluno.classe_id)%>
-</p>
 
-<p>
-<strong>B1:</strong>
-<%=@aluno.b1%>
-</p>
+        </div>
+        </div>
 
-<p>
-<strong>B2:</strong>
-<%=@aluno.b2%>
-</p>
 
-<p>
-<strong>Media:</strong>
-<%=@aluno.media%>
-</p>
 
-<p>
-<strong>Status:</strong>
-<%=@aluno.status%>
-</p>
-</div>
-</div>
+
 <button class="button is-outlined"><%= link_to 'Voltar', alunos_path %></button>
 <button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(@aluno)%></button>
-

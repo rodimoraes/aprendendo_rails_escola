@@ -1,7 +1,10 @@
-
-  <div class="hero-body">
-  <div class = "notification">
-    <%= form_with(model: aluno,local: true,  html: { multipart: true }) do |form|%>
+<div class="columns is-desktop">
+  <div class="column">
+  <div class="box">
+    <strong>Dados Pessoais:</strong>
+    <br>
+    <br>
+      <%= form_with(model: aluno,local: true,  html: { multipart: true }) do |form|%>
     <p>
         <%= form.label :foto %>
         <%= form.file_field :foto %>
@@ -39,14 +42,21 @@
         </div>
     </p>
     
-
-    <p>
+  
+  </div>
+  
+  </div>
+  <div class="column">
+  <div class="box">
+  <strong>Dados Escolares:</strong>
+    <br>
+    <br>
+     <p>
     <div class="field">
         <%= form.label :classe%>
         <%= form.collection_select :classe_id, Classe.all, :id, :nome %>
     </div>
     </p>
-
     <p>   
         <div class="field">
             <%=form.label :b1%>
@@ -59,14 +69,19 @@
             <%=form.text_field :b2%>
         </div>
     </p>
-    <p>  
+  </div>
+
+  </div>
+</div>
+
+   <p>  
         <div class="actions">
             <div class="actions">
-           <input class="button" type="submit" name="commit" value="Salvar" data-disable-with="Create Aluno" /></button>
-         </div>
+            <input class="button" type="submit" name="commit" value="Salvar" data-disable-with="Create Aluno" /></button>
+            </div>
         </div>
-        </p>
+    </p>
     <%end%>
-    </div>
+    
 </div>
-</div>
+<br>
