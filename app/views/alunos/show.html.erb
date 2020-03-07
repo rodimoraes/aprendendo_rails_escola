@@ -1,102 +1,103 @@
-<div class="hero">
-    <div class="container is-widescreen">
-      <h1 class="title">
-        Dados do Aluno:
-      </h1> 
+     <% if notice%>
+     <div class="notification is-warning is-light">
+      <p id="notice"><%=notice%></p>
     </div>
-  </div>
-<div class="columns is-desktop">
-  <div class="column">
+    <%end%>
+    <div class="container">
+      <div class="notification">
+    <div class="hero">
+      <div class="container is-widescreen">
+        <h1 class="title">
+          Dados do Aluno:
+        </h1> 
+      </div>
+    </div>
+
+    <div class="columns is-desktop">
+      <div class="column">
         <div class="box">
-        <strong>Dados Pessoais:</strong>
-        <br>
-        <article class="media">
-        <div class="media-left">
-        <figure class="image is-64x64">
-        <img class="is-rounded" src= <%= @aluno.foto.url(:medium) %> </img>
-        </figure>
+          <strong>Dados Pessoais:</strong>
+          <br>
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src= <%= @aluno.foto.url(:medium) %> /img>
+              </figure>
+            </div>
+            <div class="media-content">
+              <p>
+                <strong>Id:</strong>
+                <%= @aluno.id %>
+              </p>
 
+              <p>
+                <strong>Nome:</strong>
+                <%=@aluno.nome%>
+              </p>
+
+              <p>
+                <strong>Data de Nascimento:</strong>
+                <%=format_data(@aluno.data_nasc)%>
+              </p>
+
+              <p>
+                <strong>Sexo:</strong>
+                <%=@aluno.sexo%>
+              </p>
+
+              <p>
+                <strong>Telefone:</strong>
+                <%if @aluno.telefone != nil%>
+                <%=format_telefone(@aluno.telefone.to_s)%>
+                <%else%>
+                <i>Telefone não cadastrado </i>
+                <%end%>
+              </p>
+
+              <p>
+                <strong>Endereço:</strong>
+                <%=@aluno.endereco%>
+              </p>
+            </div>
+          </article>
         </div>
-        <div class="media-content">
-        <div class="content">
-        <p>
-        <strong>Id:</strong>
-        <%= @aluno.id %>
-        </p>
+      </div>
 
-        <p>
-        <strong>Nome:</strong>
-        <%=@aluno.nome%>
-        </p>
-
-        <p>
-        <strong>Data de Nascimento:</strong>
-        <%=format_data(@aluno.data_nasc)%>
-        </p>
-
-        <p>
-        <strong>Sexo:</strong>
-        <%=@aluno.sexo%>
-        </p>
-
-        <p>
-        <strong>Telefone:</strong>
-        <%if @aluno.telefone != nil%>
-        <%=format_telefone(@aluno.telefone.to_s)%>
-        <%else%>
-        <i>Telefone não cadastrado </i>
-        <%end%>
-        </p>
-
-        <p>
-        <strong>Endereço:</strong>
-        <%=@aluno.endereco%>
-        </p>
-        </p>
-        </div>
-        </div>
-        </article>
-        </div>
-        </div>
-
-        <div class="column">
+      <div class="column">
         <div class="box">
-         <strong>Dados Escolares:</strong>
-        <p>
-        <strong>Classe:</strong>
-        <%=classe_identifica(@aluno.classe_id)%>
-        </p>
+          <strong>Dados Escolares:</strong>
+          <p>
+            <strong>Classe:</strong>
+            <%=classe_identifica(@aluno.classe_id)%>
+          </p>
+          <h1>alo mundo</h1>
+          <p>
+            <strong>B1:</strong>
+            <%=@aluno.b1%>
+          </p>
 
-        <p>
-        <strong>B1:</strong>
-        <%=@aluno.b1%>
-        </p>
+          <p>
+            <strong>B2:</strong>
+            <%=@aluno.b2%>
+          </p>
 
-        <p>
-        <strong>B2:</strong>
-        <%=@aluno.b2%>
-        </p>
+          <p>
+            <strong>Media:</strong>
+            <%=@aluno.media%>
+          </p>
 
-        <p>
-        <strong>Media:</strong>
-        <%=@aluno.media%>
-        </p>
-
-        <p>
-        <strong>Status:</strong>
-        <%=@aluno.status%>
-        </p>
+          <p>
+            <strong>Status:</strong>
+            <%=@aluno.status%>
+          </p>
         </div>
-        </div>
-
-
-
-
-        </div>
-        </div>
-
-
-
-
-<button class="button is-outlined"><%= link_to 'Voltar', alunos_path %></button>
-<button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(@aluno)%></button>
+      </div>
+    </div>
+</div>
+</div>
+    <div class="container">
+      <div class="notification">
+        <button class="button is-outlined"><%= link_to 'Voltar', alunos_path %></button>
+        <button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(@aluno)%></button>
+      </div>
+    </div>

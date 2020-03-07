@@ -1,5 +1,6 @@
 class AlunosController < ApplicationController
     before_action :set_aluno, only: [:show, :edit, :update, :destroy]
+    before_action :set_classes_options, only: [:new, :create ,:edit ,:update]
     #metodos internos
    
 
@@ -25,11 +26,13 @@ class AlunosController < ApplicationController
     end
 
     def show
-        @classes = Classe.all
     end
 
     def new
         @aluno = Aluno.new
+    end
+
+    def edit
     end
     
     def update
@@ -39,6 +42,7 @@ class AlunosController < ApplicationController
                 status = status_atualiza(media)
                 @aluno.update_attribute(:media, media)
                 @aluno.update_attribute(:status, status)
+
                 format.html {redirect_to @aluno, notice: 'Aluno atualizado com sucesso!'}
                 format.json {render :show,status: :ok, location: @aluno}
             else
@@ -83,6 +87,11 @@ end
     def aluno_params
         params.require(:aluno).permit(:nome,:classe_id,:sexo,:endereco,:data_nasc,:b1,:b2,:foto,:telefone)
     end
+
+    def set_classes_options
+        @classes_options = Classe.all.pluck(:nome,:id)
+    end
+    
     
 end
 
