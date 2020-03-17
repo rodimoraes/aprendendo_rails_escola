@@ -1,0 +1,21 @@
+'pt-BR':
+  activerecord:
+    models:
+      aluno: Aluno
+      classes: Classes
+    attributes:
+      aluno:
+        id: Código
+        nome: Nome
+        endereco: Endereço
+        data_nasc: Data de Nascimento
+        b1: B1
+        b2: B2
+        media: Média
+        update_at: Atualizado em
+        created_at: Criado em
+      classes:
+        id: Código
+        nome: Nome da Classe
+        update_at: Atualizado em
+        created_at: Criado em

@@ -1,66 +1,57 @@
 <div>
-
   <div class="hero-body">
     <h1 class = title> Alunos
     </h1>
-</div>
-
-<div class="container">
-  <div class="notification">
-    <button class="button is-outlined"><%= link_to 'Novo', new_aluno_path %></button>
   </div>
-</div>
-
-
-<div class ="hero-body">
+  <div class="container">
+    <div class="notification">
+      <button class="button is-outlined"><%= link_to 'Novo', new_aluno_path %></button>
+    </div>
+  </div>
+  <div class ="hero-body">
     <div class="container has-text-centered">
-        <table class= "table is-striped is-fullwidth">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Nome</th>
-                    <th>Classe</th>
-                    <th>Data de Nascimento</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @alunos.each do |aluno|%>
-                <tr>
-                    <td><%= aluno.id%></td>
-                    <td><%= aluno.nome%></td>
-                    <td><%= classe_identifica(aluno.classe_id)%></td>
-                    <td><%= format_data(aluno.data_nasc)%></td>
-                    <% if aluno.status == 'APROVADO'%>
-                    <td><font color="green"><b><%= aluno.status%></b></font></td>
-                    <%else%>
-                    <td><font color="red"><b><%= aluno.status%></b></font></td>
-                    <%end%>
-                    <td><button class="button is-outlined"><%= link_to 'Mostrar', aluno %></button></td>
-                    <td><button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(aluno)%></button></td>
-                    <td><button class="button is-outlined"><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
-
-                </tr>
-                <%end%>
-            </tbody>
-        </table>
+      <table class= "table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Classe</th>
+            <th>Data de Nascimento</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @alunos.each do |aluno|%>
+            <tr>
+              <td><%= aluno.id%></td>
+              <td><%= aluno.nome%></td>
+              <td><%= classe_identifica(aluno.classe_id)%></td>
+              <td><%= format_data(aluno.data_nasc)%></td>
+              <% if aluno.status == true%>
+                <td><font color="green"><b><%= aprovacao(aluno.status)%></b></font></td>
+              <%else%>
+                <td><font color="red"><b><%= aprovacao(aluno.status)%></b></font></td>
+              <%end%>
+              <td><button class="button is-outlined"><%= link_to 'Mostrar', aluno %></button></td>
+              <td><button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(aluno)%></button></td>
+              <td><button class="button is-outlined"><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
     </div>
-</div>
-
-<br>
-
-
-<hr>
-
-<body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Section</h1>
-      <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
-      </h2>
-    </div>
-  </section>
-</body>
-<hr>
-<%#= link_to 'Home', dashboard_index_path %>
+  </div>
+  <br>
+  <hr>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Section</h1>
+        <h2 class="subtitle">
+          A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+        </h2>
+      </div>
+    </section>
+  </body>
+  <hr>
+  <%#= link_to 'Home', dashboard_index_path %>

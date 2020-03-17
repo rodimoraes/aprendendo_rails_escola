@@ -5,17 +5,18 @@ class AlunosController < ApplicationController
    
 
     def calc_media(b1,b2)
-        media = (b1 + b2) /2
+        media = (b1+b2)/2
         return media
     end
 
-    def status_atualiza(calc_media)
-        if calc_media >=7
-            status = 'APROVADO'
+    def atualiza_status(media)
+        if media >= 7
+            status = true
+            return status
         else
-            status = 'REPROVADO'
+            status = false
+            return status
         end
-        return status
     end    
 
     #Fim metodos internos
@@ -39,7 +40,7 @@ class AlunosController < ApplicationController
         respond_to do |format|
             if @aluno.update (aluno_params)
                 media = calc_media(@aluno.b1,@aluno.b2)
-                status = status_atualiza(media)
+                status = atualiza_status(media)
                 @aluno.update_attribute(:media, media)
                 @aluno.update_attribute(:status, status)
 
@@ -64,10 +65,13 @@ class AlunosController < ApplicationController
     def create
         @aluno = Aluno.new(aluno_params)
         media = calc_media(@aluno.b1,@aluno.b2)
-        status = status_atualiza(media)
+        status = atualiza_status(media)
+
         @aluno.media = media
         @aluno.status = status
+        
         respond_to do |format|
+        
         if @aluno.save
             format.html{redirect_to @aluno,notice: 'Aluno cadastrado com sucesso!'}
             format.json{render :show, status: :created, location: @aluno }    
@@ -91,8 +95,6 @@ end
     def set_classes_options
         @classes_options = Classe.all.pluck(:nome,:id)
     end
-    
-    
 end
 
 

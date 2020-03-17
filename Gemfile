@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+#gems adicionadas
+#gem 'rails-i18n', '~> 5.1' #gem de locale do rails
+#gem 'pry-rails' #melhorar a interface do IRB
+#gem 'tty-spinner' #deixar mais bonito os loadings dos rakes
+
+#gems padrões
 gem "paperclip", "~> 6.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'

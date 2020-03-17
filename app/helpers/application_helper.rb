@@ -14,6 +14,15 @@ module ApplicationHelper
           end
     end
 
+    def aprovacao(status)
+        if status == true
+            return 'Aprovado'
+        else
+            return 'Reprovado'
+    end
+end
+
+
     def format_telefone(telefone)
         tel = ''
         telefone = telefone.to_s

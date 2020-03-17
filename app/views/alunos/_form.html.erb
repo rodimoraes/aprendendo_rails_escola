@@ -1,86 +1,86 @@
 
 <%= form_with(model: aluno,local: true,  html: { multipart: true }) do |form|%>
-    <div class="container">
-      <div class="notification">
-<div class="columns is-desktop">
-  <div class="column">
-    <div class="box">
-      <strong>Dados Pessoais:</strong>
-      <br>
-      <br>
-      <%#= form_with(model: aluno,local: true,  html: { multipart: true }) do |form|%>
-      <p>
-        <%= form.label :foto %>
-        <%= form.file_field :foto %>
-      </p>
-      <br>
-      <p>
-        <div class="field">
-          <%= form.label :nome%>
-          <%= form.text_field :nome%>
+<div class="container">
+  <div class="notification">
+    <div class="columns is-desktop">
+      <div class="column">
+        <div class="box">
+          <strong>Dados Pessoais:</strong>
+          <br>
+          <br>
+          <%#= form_with(model: aluno,local: true,  html: { multipart: true }) do |form|%>
+          <p>
+            <%= form.label :foto %>
+            <%= form.file_field :foto %>
+          </p>
+          <br>
+          <p>
+            <div class="field">
+              <%= form.label :nome%>
+              <%= form.text_field :nome%>
+            </div>
+          </p>
+          <p>
+            <div class="field">
+              <%=form.label :data_nasc%>
+              <%=form.date_select :data_nasc, start_year: 1970%>
+            </div>
+          </p>
+          <p>
+            <div class="field">
+              <%= form.label :sexo%>
+              <%=select(:aluno, :sexo ,([['Masculino','M'],['Feminino','F']]))%>
+            </div>
+          </p>
+          <p>
+            <div class="field">
+              <%= form.label :telefone%>
+              <%= form.text_field :telefone%>
+              <small><i>*Digite apenas números ex: 12912341234</i></small>
+            </div>
+          </p>
+          <p>
+            <div class="field">
+              <%= form.label :endereco%>
+              <%= form.text_field :endereco%>
+            </div>
+          </p>
         </div>
-      </p>
-      <p>
-        <div class="field">
-          <%=form.label :data_nasc%>
-          <%=form.date_select :data_nasc, start_year: 1970%>
-        </div>
-      </p>
-      <p>
-        <div class="field">
-          <%= form.label :sexo%>
-          <%=select(:aluno, :sexo ,([['Masculino','M'],['Feminino','F']]))%>
-        </div>
-      </p>
-      <p>
-        <div class="field">
-          <%= form.label :telefone%>
-          <%= form.text_field :telefone%>
-          <small><i>*Digite apenas números ex: 12912341234</i></small>
-        </div>
-      </p>
-      <p>
-        <div class="field">
-          <%= form.label :endereco%>
-          <%= form.text_field :endereco%>
-        </div>
-      </p>
+      </div>
+      
+      <div class="column">
+        <div class="box">
+          <strong>Dados Escolares:</strong>
+          <br>
+          <br>
+          <p>
+            <div class="field">
+              <%= form.label :classe%>
+              <%= form.select('classe_id',@classes_options ,{include_blank: "Selecione..."})%>
+              <%#Funcionam também, mas o mais correto é a linha de cima.%>
+              <%#= form.collection_select :classe_id, Classe.all, :id, :nome %>
+            </div>
+          </p>
+          <p>
+            <div class="field">
+              <%=form.label :b1%>
+              <%=form.text_field :b1%>
+            </div>
+          </p>
+          <p>
+            <div class="field">
+              <%=form.label :b2%>
+              <%=form.text_field :b2%>
+            </div>
+          </p>
+        </div>  
+      </div>
+    </div>
+    <div class="actions">
+      <input class="button" type="submit" name="commit" value="Salvar">
+      <%#<input class="button" type="submit" name="commit" value="Salvar" data-disable-with="Create Aluno"/>%>
     </div>
   </div>
-  
-  <div class="column">
-    <div class="box">
-      <strong>Dados Escolares:</strong>
-      <br>
-      <br>
-      <p>
-        <div class="field">
-          <%= form.label :classe%>
-          <%= form.select('classe_id',@classes_options ,{include_blank: "Selecione..."})%>
-          <%#Funcionam também, mas o mais correto é a linha de cima.%>
-          <%#= form.collection_select :classe_id, Classe.all, :id, :nome %>
-        </div>
-      </p>
-      <p>
-        <div class="field">
-          <%=form.label :b1%>
-          <%=form.text_field :b1%>
-        </div>
-      </p>
-      <p>
-        <div class="field">
-          <%=form.label :b2%>
-          <%=form.text_field :b2%>
-        </div>
-      </p>
-    </div>  
-  </div>
-</div>
-<div class="actions">
-  <input class="button" type="submit" name="commit" value="Salvar">
-  <%#<input class="button" type="submit" name="commit" value="Salvar" data-disable-with="Create Aluno"/>%>
-</div>
-</div>
 </div>
 <%end%>
 <br>
