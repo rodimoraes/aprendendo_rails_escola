@@ -28,6 +28,19 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  id: id
+  name: Name
+  address: Address
+  birthday: Birthday
+  status: Status
+  b1: B1
+  b2: B2
+  average: Average
+  update_at: Update at
+  created_at: Created at
+  class: Class
+  new: New
+  student: Student
+  accredited: Accredited
+  disapproved: Disapproved

@@ -29,6 +29,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-pt:
-  hello: "Olá Mundo"
-  
+'pt-BR':
+  id: Código
+  name: Nome
+  address: Endereço
+  birthday: Data de Nascimento
+  status: Status
+  b1: B1
+  b2: B2
+  average: Média
+  update_at: Atualizado em
+  created_at: Criado em
+  class: Classe
+  new: Novo
+  student: Aluno
+  accredited: Aprovado
+  disapproved: Reprovado

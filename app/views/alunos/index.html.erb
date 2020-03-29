@@ -5,7 +5,7 @@
   </div>
   <div class="container">
     <div class="notification">
-      <button class="button is-outlined"><%= link_to 'Novo', new_aluno_path %></button>
+      <button class="button is-outlined"><%= link_to t(:new), new_aluno_path %></button>
     </div>
   </div>
   <div class ="hero-body">
@@ -14,10 +14,10 @@
         <thead>
           <tr>
             <th>id</th>
-            <th>Nome</th>
-            <th>Classe</th>
-            <th>Data de Nascimento</th>
-            <th>Status</th>
+            <th><%=t(:name)%></th>
+            <th><%=t(:class)%></th>
+            <th><%=t(:birthday)%></th>
+            <th><%=t(:status)%></th>
           </tr>
         </thead>
         <tbody>

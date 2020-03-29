@@ -22,7 +22,6 @@ module ApplicationHelper
     end
 end
 
-
     def format_telefone(telefone)
         tel = ''
         telefone = telefone.to_s
@@ -30,7 +29,6 @@ end
         tel << ')'+ telefone[2..6]
         tel << '-'+ telefone[7..10]
         return tel
-    
     end
 
 end

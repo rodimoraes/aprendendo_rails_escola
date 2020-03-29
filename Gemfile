@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 #gems adicionadas
-#gem 'rails-i18n', '~> 5.1' #gem de locale do rails
-#gem 'pry-rails' #melhorar a interface do IRB
-#gem 'tty-spinner' #deixar mais bonito os loadings dos rakes
+gem 'rails-i18n' #gem de locale do rails para fazer a tradução da aplicação
+gem 'pry-rails' #melhorar a interface do IRB
+gem 'tty-spinner' #deixar mais bonito os loadings dos rakes
 
 #gems padrões
 gem "paperclip", "~> 6.0.0"
