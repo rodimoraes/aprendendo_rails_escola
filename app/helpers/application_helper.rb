@@ -16,11 +16,11 @@ module ApplicationHelper
 
     def aprovacao(status)
         if status == true
-            return 'Aprovado'
+            return :accredited
         else
-            return 'Reprovado'
+            return :disapproved
+        end
     end
-end
 
     def format_telefone(telefone)
         tel = ''

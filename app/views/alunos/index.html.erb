@@ -28,9 +28,9 @@
               <td><%= classe_identifica(aluno.classe_id)%></td>
               <td><%= format_data(aluno.data_nasc)%></td>
               <% if aluno.status == true%>
-                <td><font color="green"><b><%= aprovacao(aluno.status)%></b></font></td>
+                <td><font color="green"><b><%=t(aprovacao(aluno.status))%></b></font></td>
               <%else%>
-                <td><font color="red"><b><%= aprovacao(aluno.status)%></b></font></td>
+                <td><font color="red"><b><%=t(aprovacao(aluno.status))%></b></font></td>
               <%end%>
               <td><button class="button is-outlined"><%= link_to 'Mostrar', aluno %></button></td>
               <td><button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(aluno)%></button></td>
