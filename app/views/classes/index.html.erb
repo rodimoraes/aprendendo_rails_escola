@@ -8,11 +8,11 @@
 <%end%>
 
     <div class="hero-body">
-    <h1 class = title> Classes
+    <h1 class = title> <%=t(:class)%>
     </h1>
 </div>
 
-    <button class="button is-outlined"><%= link_to 'Nova', new_class_path %></button>
+    <button class="button is-outlined"><%= link_to t(:new), new_class_path %></button>
 
 <div class ="hero-body">
     <div class="container has-text-centered">
@@ -20,7 +20,7 @@
     <thead>
     <tr>
         <th>id</th>
-        <th>Classe</th>
+        <th><%=t(:class)%></th>
     </tr>
     </thead>
             <tbody>
@@ -28,9 +28,9 @@
             <tr>
             <td><%= classe.id%></td>
             <td><%= classe.nome%></td>
-            <td><button class="button is-outlined"><%= link_to 'Mostrar', classe %></button></td>
-            <td><button class="button is-outlined"><%= link_to 'Editar', edit_class_path(classe)%></button></td>
-            <td><button class="button is-outlined"><%= link_to 'Excluir', classe,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
+            <td><button class="button is-outlined"><%= link_to t(:show), classe %></button></td>
+            <td><button class="button is-outlined"><%= link_to t(:edit), edit_class_path(classe)%></button></td>
+            <td><button class="button is-outlined"><%= link_to t(:delete), classe,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
             </tr>
             <%end%>
         </tbody>

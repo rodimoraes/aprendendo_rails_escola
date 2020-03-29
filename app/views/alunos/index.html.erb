@@ -1,6 +1,6 @@
 <div>
   <div class="hero-body">
-    <h1 class = title> Alunos
+    <h1 class = title> <%=t(:student)%>
     </h1>
   </div>
   <div class="container">
@@ -32,9 +32,9 @@
               <%else%>
                 <td><font color="red"><b><%=t(aprovacao(aluno.status))%></b></font></td>
               <%end%>
-              <td><button class="button is-outlined"><%= link_to 'Mostrar', aluno %></button></td>
-              <td><button class="button is-outlined"><%= link_to 'Editar', edit_aluno_path(aluno)%></button></td>
-              <td><button class="button is-outlined"><%= link_to 'Excluir', aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
+              <td><button class="button is-outlined"><%= link_to t(:show), aluno %></button></td>
+              <td><button class="button is-outlined"><%= link_to t(:edit), edit_aluno_path(aluno)%></button></td>
+              <td><button class="button is-outlined"><%= link_to t(:delete), aluno,method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></button></td>
             </tr>
           <%end%>
         </tbody>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Escola</title>
+    <title><%=t(:school)%></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
@@ -31,10 +31,10 @@
           </div>
           <div class="navbar-end">
             <a class = "navbar-item" href="<%=root_path(locale: 'pt-BR')%>">
-              Português
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" width="21.168" height="5.292">
             </a>
             <a class = "navbar-item" href="<%=root_path(locale: :en)%>">
-              English
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" width="21.168" height="5.292">
             </a>
           </div>
         </div>

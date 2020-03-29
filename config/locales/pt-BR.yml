@@ -45,3 +45,7 @@
   student: Aluno
   accredited: Aprovado
   disapproved: Reprovado
+  school: Escola
+  show: Mostrar
+  edit: Editar
+  delete: Excluir
