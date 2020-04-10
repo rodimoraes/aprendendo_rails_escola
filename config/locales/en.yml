@@ -48,3 +48,7 @@ en:
   show: Show
   edit: Edit
   delete: Delete
+  student_data: Student Data
+  tools: Tools
+  messages:
+    updated_successfully: Updated Successfully!

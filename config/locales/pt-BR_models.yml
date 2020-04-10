@@ -3,6 +3,7 @@
     models:
       student: Aluno
       class: Classes
+      tool: Ferramentas
     attributes:
       aluno:
         id: Código

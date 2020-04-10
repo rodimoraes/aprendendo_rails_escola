@@ -49,3 +49,7 @@
   show: Mostrar
   edit: Editar
   delete: Excluir
+  student_data: Dados do Aluno
+  tools: Ferramentas
+  messages:
+    updated_successfully: Atualizado com Sucesso!
